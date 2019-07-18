@@ -1,19 +1,26 @@
 package soundcloud
 
 import (
+	"bytes"
 	"io/ioutil"
 	"log"
 	"net/http"
 )
 
-func (sc SoundCloudAuth) Resolve(url string) (*[]byte, error) {
+func Concat(values ...string) string {
+	var buffer bytes.Buffer
+	for _, s := range values {
+		buffer.WriteString(s)
+	}
+	return buffer.String()
+}
 
-	req_url := Concat(SOUNDCLOUD_API_URL, "/resolve?url=", url, "&client_id=", sc.ClientId)
+func Request(url string) ([]byte, error) {
 
-	resp, err := http.Get(req_url)
+	resp, err := http.Get(url)
 
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
 	defer resp.Body.Close()
@@ -24,8 +31,8 @@ func (sc SoundCloudAuth) Resolve(url string) (*[]byte, error) {
 
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
-	return &body, nil
+	return body, nil
 }
