@@ -70,7 +70,6 @@ func main() {
 		log.Fatal(err)
 	}
 	
-
 	fmt.Print(string(usr))
 }
 ```
@@ -91,7 +90,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	
 
 	fmt.Print(string(fmtFollowers))
 }
@@ -114,7 +112,6 @@ func main() {
 		log.Fatal(err)
 	}
 	
-
 	fmt.Print(string(fmtFollowings))
 }
 ```
