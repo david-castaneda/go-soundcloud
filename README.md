@@ -19,7 +19,7 @@ This Golang package is a hassle free way of interfacing with the SoundCloud Api.
 ## Getting started
 - ### Installing 
 ```bash
-go get https://github.com/david-castaneda/go-soundcloud
+go get github.com/david-castaneda/go-soundcloud
 ```
 - ### Importing
 ```golang
@@ -43,7 +43,7 @@ Returns a SoundCloud User
 ```golang
 func main() {
 	client := SoundCloud.Auth(<SOUNCLOUD_CLIENT_ID>)
-	usr, err := client.Resolve(<USERNAME>)
+	usr, err := client.Users(<USERNAME>)
 
 	if err != nil {
 		log.Fatal(err)
