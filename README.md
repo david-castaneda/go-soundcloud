@@ -1,6 +1,6 @@
 ![go-souncloud](https://user-images.githubusercontent.com/21694364/61419517-93eba700-a8cc-11e9-8cd0-c379bd5a7129.png)
 
-This Golang package is a hassle free way of interfacing with the SoundCloud Api. As simple as passing in a client id and your set to got with most of the services SoundCloud has to offer.
+This Golang package is a hassle free way of interfacing with the SoundCloud Api. As simple as passing in a client id and your set to got with most of the resources SoundCloud has to offer.
 
 ## Directory
 - [Getting Started](#getting-started)
@@ -19,7 +19,7 @@ This Golang package is a hassle free way of interfacing with the SoundCloud Api.
 ## Getting started
 - ### Installing 
 ```bash
-go get https://github.com/david-castaneda/go-soundcloud
+go get github.com/david-castaneda/go-soundcloud
 ```
 - ### Importing
 ```golang
@@ -43,7 +43,7 @@ Returns a SoundCloud User
 ```golang
 func main() {
 	client := SoundCloud.Auth(<SOUNCLOUD_CLIENT_ID>)
-	usr, err := client.Resolve(<USERNAME>)
+	usr, err := client.Users(<USERNAME>)
 
 	if err != nil {
 		log.Fatal(err)
@@ -70,7 +70,6 @@ func main() {
 		log.Fatal(err)
 	}
 	
-
 	fmt.Print(string(usr))
 }
 ```
@@ -91,7 +90,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	
 
 	fmt.Print(string(fmtFollowers))
 }
@@ -114,13 +112,12 @@ func main() {
 		log.Fatal(err)
 	}
 	
-
 	fmt.Print(string(fmtFollowings))
 }
 ```
 
 - ### Resolve
-Given a SoundCloud url, this service returns any data the url may have generated
+Given a SoundCloud url, this resource returns any data the url may have generated
 - An example of when to use this resource is when trying to find out a **users id** with only the **username** available. This endpoint will return the same response [users](#users) would return, however can be used with any SoundCloud url.
 ```golang
 func main() {
@@ -144,4 +141,4 @@ This package is using Zero external dependencies.
 If you would like to contribute, you can create a template and make a PR or fork the projects and make a PR. All contributions/suggestions are welcome.
 
 ### In the works 👨🏻‍💻
-- All the missing services 😅
+- All the missing resources 😅
