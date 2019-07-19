@@ -16,35 +16,35 @@ type SoundCloudAuth struct {
 }
 
 type SoundCloudUser struct {
-	Id                   uint32   `json:"id"`
-	FirstName            string   `json:"first_name,omitempty"`
-	LastName             string   `json:"last_name,omitempty"`
-	FullName             string   `json:"full_name,omitempty"`
-	Username             string   `json:"username,omitempty"`
-	AvatarURL            string   `json:"avatar_url,omitempty"`
-	URI                  string   `json:"uri,omitempty"`
-	FollowingsCount      uint32   `json:"followings_count,omitempty"`
-	FollowersCount       uint32   `json:"followers_count,omitempty"`
-	Online               bool     `json:"online,omitempty"`
-	CommentsCount        uint32   `json:"comments_count,omitempty"`
-	LikesCount           uint32   `json:"likes_count,omitempty"`
-	Plan                 string   `json:"plan,omitempty"`
-	PlaylistCount        uint32   `json:"playlist_count,omitempty"`
-	Website              string   `json:"website,omitempty"`
-	Kind                 string   `json:"kind,omitempty"`
-	Country              string   `json:"country,omitempty"`
-	Subscriptions        []string `json:"subscriptions,omitempty"`
-	City                 string   `json:"city,omitempty"`
-	Description          string   `json:"description,omitempty"`
-	TrackCount           uint32   `json:"track_count,omitempty"`
-	DiscogsName          string   `json:"discogs_name,omitempty"`
-	PublicFavoritesCount uint32   `json:"public_favorites_count,omitempty"`
-	RepostsCount         uint32   `json:"reposts_count,omitempty"`
-	MySpaceName          string   `json:"myspace_name,omitempty"`
-	WebsiteTitle         string   `json:"website_title,omitempty"`
-	Permalink            string   `json:"permalink,omitempty"`
-	PermalinkURL         string   `json:"permalink_url,omitempty"`
-	LastModified         string   `json:"last_modified,omitempty"`
+	Id                   uint32                    `json:"id"`
+	FirstName            string                    `json:"first_name,omitempty"`
+	LastName             string                    `json:"last_name,omitempty"`
+	FullName             string                    `json:"full_name,omitempty"`
+	Username             string                    `json:"username,omitempty"`
+	AvatarURL            string                    `json:"avatar_url,omitempty"`
+	URI                  string                    `json:"uri,omitempty"`
+	FollowingsCount      uint32                    `json:"followings_count,omitempty"`
+	FollowersCount       uint32                    `json:"followers_count,omitempty"`
+	Online               bool                      `json:"online,omitempty"`
+	CommentsCount        uint32                    `json:"comments_count,omitempty"`
+	LikesCount           uint32                    `json:"likes_count,omitempty"`
+	Plan                 string                    `json:"plan,omitempty"`
+	PlaylistCount        uint32                    `json:"playlist_count,omitempty"`
+	Website              string                    `json:"website,omitempty"`
+	Kind                 string                    `json:"kind,omitempty"`
+	Country              string                    `json:"country,omitempty"`
+	Subscriptions        []SoundCloudSubscriptions `json:"subscriptions,omitempty"`
+	City                 string                    `json:"city,omitempty"`
+	Description          string                    `json:"description,omitempty"`
+	TrackCount           uint32                    `json:"track_count,omitempty"`
+	DiscogsName          string                    `json:"discogs_name,omitempty"`
+	PublicFavoritesCount uint32                    `json:"public_favorites_count,omitempty"`
+	RepostsCount         uint32                    `json:"reposts_count,omitempty"`
+	MySpaceName          string                    `json:"myspace_name,omitempty"`
+	WebsiteTitle         string                    `json:"website_title,omitempty"`
+	Permalink            string                    `json:"permalink,omitempty"`
+	PermalinkURL         string                    `json:"permalink_url,omitempty"`
+	LastModified         string                    `json:"last_modified,omitempty"`
 }
 
 type SoundCloudPlaylist struct {
@@ -142,4 +142,13 @@ type SoundCloudFollowers struct {
 
 type SoundCloudFollowings struct {
 	Collection []SoundCloudUser `json:"collection"`
+}
+
+type SoundCloudSubscriptions struct {
+	Product SoundCloudProduct `json:"product"`
+}
+
+type SoundCloudProduct struct {
+	Id   string `json:"id"`
+	Name string `json:"name"`
 }
