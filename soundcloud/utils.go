@@ -2,8 +2,9 @@ package soundcloud
 
 import (
 	"bytes"
+	"errors"
+	"fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
 )
 
@@ -26,7 +27,9 @@ func Request(url string) ([]byte, error) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		log.Fatalf("status code error: %d %s", resp.StatusCode, resp.Status)
+		errMsg := fmt.Sprintf("Status code error: %d %s", resp.StatusCode, resp.Status)
+		err := errors.New(errMsg)
+		return nil, err
 	}
 
 	body, err := ioutil.ReadAll(resp.Body)
