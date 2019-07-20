@@ -1,6 +1,6 @@
 package soundcloud
 
-func (sc SoundCloudAuth) Resolve(url string) (*[]byte, error) {
+func (sc SoundCloudClient) Resolve(url string) (*[]byte, error) {
 
 	req_url := Concat(SOUNDCLOUD_API_URL, "/resolve?url=", url, "&client_id=", sc.ClientId)
 

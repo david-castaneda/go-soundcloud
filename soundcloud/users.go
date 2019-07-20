@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 )
 
-func (sc SoundCloudAuth) Users(username string) (*SoundCloudUser, error) {
+func (sc SoundCloudClient) Users(username string) (*SoundCloudUser, error) {
 
 	url := Concat(SOUNDCLOUD_API_URL, "/users/", username, "?client_id=", sc.ClientId)
 

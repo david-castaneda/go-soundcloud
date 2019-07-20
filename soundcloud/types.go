@@ -5,10 +5,10 @@ const SOUNDCLOUD_BASE_URL string = "https://soundcloud.com"
 
 type SoundCloud interface {
 	Resolve(username string) (*SoundCloudUser, error)
-	GetPlaylists(username string) []SoundCloudPlaylist
+	Playlists(username string) []SoundCloudPlaylist
 }
 
-type SoundCloudAuth struct {
+type SoundCloudClient struct {
 	ClientId     string `json:"client_id"`
 	ClientSecret string `json:"client_secret"`
 	AccessToken  string `json:"access_token"`

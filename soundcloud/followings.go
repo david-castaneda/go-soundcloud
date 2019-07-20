@@ -2,7 +2,7 @@ package soundcloud
 
 import "encoding/json"
 
-func (sc SoundCloudAuth) Followings(sc_id string) (*SoundCloudFollowings, error) {
+func (sc SoundCloudClient) Followings(sc_id string) (*SoundCloudFollowings, error) {
 
 	url := Concat(SOUNDCLOUD_API_URL, "/users/", sc_id, "/followings?client_id=", sc.ClientId)
 

@@ -1,5 +1,5 @@
 package soundcloud
 
-func Auth(client_id string) *SoundCloudAuth {
-	return &SoundCloudAuth{ClientId: client_id}
+func Auth(client_id string) *SoundCloudClient {
+	return &SoundCloudClient{ClientId: client_id}
 }
