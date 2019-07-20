@@ -24,7 +24,7 @@ go get github.com/david-castaneda/go-soundcloud
 - ### Importing
 ```golang
 import (
-	SoundCloud "github.com/go-soundcloud/soundcloud"
+	SoundCloud "github.com/david-castaneda/go-soundcloud/soundcloud"
 )
 ```
 - ### Authenticating
